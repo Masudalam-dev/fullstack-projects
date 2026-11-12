@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+
+<header class="header">
+
+    <div class="header__container">
+
+        <!-- Logo -->
+        <div class="header__logo">
+            <a class="header__logo-anchor" href="/">
+                <i class="fa-solid fa-pen-nib"></i>
+                <span>BlogSpace</span>
+            </a>
+        </div>
+
+        <!-- Search Bar -->
+        <form class="header__search" action="/search" method="GET">
+
+            <input
+                class="header__search-input"
+                type="search"
+                name="q"
+                placeholder="Search articles, topics..."
+                aria-label="Search articles"
+            >
+
+            <button class="header__search-btn" type="submit"
+                    aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </form>
+
+        <!-- Navigation -->
+        <nav class="header__nav">
+
+            <ul class="header__nav-list">
+
+                <li class="header__nav-item">
+                    <a class="header__nav-anchor header__nav-anchor--active"
+                       href="/">
+                        Home
+                    </a>
+                </li>
+
+                <li class="header__nav-item">
+                    <a class="header__nav-anchor" href="/about">
+                        About
+                    </a>
+                </li>
+
+                <li class="header__nav-item">
+                    <a class="header__nav-anchor" href="/contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+</body>
+</html>

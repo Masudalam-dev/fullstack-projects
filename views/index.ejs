@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+
+    <main class="main">
+        <%- include("sidebar.ejs") %>
+
+        <section class="main__container">  
+            <div class="main__header">
+                <h1 class="main__heading">Create a new post</h1>
+                <span class="main__badge">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    New Post
+                </span>
+            </div>
+
+            <form class="editor" action="/submit" method="POST">
+                <div class="editor__group">
+                    <label class="editor__label" for="blog-title">Blog Title</label>
+                    <input class="editor__input" type="text" name="title" id="blog-title" placeholder="Title" required>
+                </div>
+
+                <div class="editor__group">
+                    <label class="editor__label" for="blog-post">Blog Content</label>
+                    <textarea class="editor__textarea" name="content" id="blog-post" placeholder="Write your blog here..." required></textarea>
+                </div>
+
+                <div class="editor__footer">
+                    <button class="editor__btn" type="submit">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Publish Post
+                    </button>
+                </div>
+            </form>
+           
+        </section>
+    </main>
+
+
+    <%- include("partials/footer.ejs") %>
+
+</body>
+</html>

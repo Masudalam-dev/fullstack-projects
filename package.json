@@ -1,0 +1,20 @@
+{
+  "name": "blog-website",
+  "version": "1.0.0",
+  "description": "This is the first website of mine. This website includes some features like creating post, viewing the created post, editing and deleting the posts.",
+  "keywords": [
+    "blog"
+  ],
+  "license": "ISC",
+  "author": "Masud",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0"
+  }
+}

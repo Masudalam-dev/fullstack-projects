@@ -1,0 +1,236 @@
+
+/* =================================
+   CSS VARIABLES
+================================= */
+
+:root {
+    --header-bg: #172554;
+    --primary-color: #ffffff;
+    --secondary-color: #cbd5e1;
+    --accent-color: #3b82f6;
+
+    --logo-font: 1.7rem;
+    --nav-font: 0.95rem;
+
+    --transition: all 0.25s ease;
+}
+
+/* =================================
+   GLOBAL RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.header {
+    width: 100%;
+    min-height: 80px;
+    padding: 15px 50px;
+    background-color: var(--header-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header__container {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 50px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* =================================
+   LOGO
+================================= */
+
+.header__logo-anchor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: var(--logo-font);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.header__logo-anchor i {
+    color: #60a5fa;
+}
+
+/* =================================
+   SEARCH BAR
+================================= */
+
+.header__search {
+    width: 100%;
+    max-width: 500px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    transition: var(--transition);
+}
+
+.header__search:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.header__search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+
+    border: none;
+    outline: none;
+
+    font-size: 0.9rem;
+    color: #1e293b;
+}
+
+.header__search-input::placeholder {
+    color: #94a3b8;
+}
+
+.header__search-btn {
+    width: 50px;
+    min-width: 50px;
+    height: 100%;
+
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.header__search-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* =================================
+   NAVIGATION
+================================= */
+
+.header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    list-style: none;
+}
+
+.header__nav-anchor {
+    position: relative;
+    display: inline-block;
+
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: var(--nav-font);
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+.header__nav-anchor:hover,
+.header__nav-anchor--active {
+    color: var(--primary-color);
+}
+
+/* Underline animation */
+
+.header__nav-anchor::after {
+    content: "";
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -7px;
+
+    background-color: #60a5fa;
+    transition: width 0.25s ease;
+}
+
+.header__nav-anchor:hover::after,
+.header__nav-anchor--active::after {
+    width: 100%;
+}
+
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 15px 25px;
+    }
+
+    .header__container {
+        gap: 20px;
+    }
+
+    .header__search {
+        max-width: 350px;
+    }
+
+    .header__nav-list {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .header {
+        padding: 18px 20px;
+    }
+
+    .header__container {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .header__logo {
+        order: 1;
+    }
+
+    .header__nav {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .header__search {
+        order: 3;
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+
+    .header__nav-list {
+        gap: 15px;
+    }
+
+    .header__nav-anchor {
+        font-size: 0.85rem;
+    }
+
+    .header__logo-anchor {
+        font-size: 1.4rem;
+    }
+}
